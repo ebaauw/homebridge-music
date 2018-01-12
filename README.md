@@ -1,10 +1,11 @@
 # homebridge-music
+[![npm](https://img.shields.io/npm/dt/homebridge-music.svg)](https://www.npmjs.com/package/homebridge-music) [![npm](https://img.shields.io/npm/v/homebridge-music.svg)](https://www.npmjs.com/package/homebridge-music)
 
 ## Homebridge plugin for iTunes with Airplay speakers
 Copyright © 2016-2018 Erik Baauw. All rights reserved.
 
 This [homebridge](https://github.com/nfarina/homebridge) plugin exposes controls to Apple's [HomeKit](http://www.apple.com/ios/home/) for a music player, like iTunes or EyeTV, running on macOS.  It provides the following features:
-- HomeKit support for controlling iTunes or EyeTV:
+- HomeKit support for controlling iTunes or [EyeTV](https://www.geniatech.eu/):
   - On/Off control;
   - Volume control;
   - Previous/Next track/channel;
@@ -12,7 +13,7 @@ This [homebridge](https://github.com/nfarina/homebridge) plugin exposes controls
 - HomeKit support for controlling AirPlay speakers connected to iTunes on macOS:
   - On/Off control;
   - Volume control;
-- HomeKit control [Airfoil](https://rogueamoeba.com/airfoil/) connected speakers:
+- HomeKit control for [Airfoil](https://rogueamoeba.com/airfoil/)-connected speakers:
   - On/Off control;
   - Volume control;
 - Provides an AppleScript framework to support other players.
