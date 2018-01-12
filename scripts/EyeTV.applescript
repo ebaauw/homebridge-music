@@ -1,5 +1,7 @@
-# homebridge-music/src/EyeTV.applescript
-# (C) 2016, Erik Baauw
+# homebridge-music/scripts/EyeTV.applescript
+# Copyright © 2016-2018 Erik Baauw. All rights reserved.
+#
+# Homebridge plugin for iTunes with Airplay speakers.
 #
 # Player: EyeTV, see: https://www.elgato.com/en/eyetv
 # Speakers: Airfoil, see: https://www.rogueamoeba.com/airfoil

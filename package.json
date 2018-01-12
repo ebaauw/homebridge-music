@@ -1,6 +1,6 @@
 {
   "name": "homebridge-music",
-  "description": "Homebridge plugin for iTunes",
+  "description": "Homebridge plugin for iTunes with Airplay speakers",
   "version": "0.0.0",
   "author": "Erik Baauw",
   "license": "Apache-2.0",
@@ -14,10 +14,12 @@
   },
   "dependencies": {
     "applescript": "^1.0.0",
-    "is-my-json-valid": "^2.17.1"
+    "is-my-json-valid": "^2.17.1",
+    "semver": "^5.4.1"
   },
   "devDependencies": {},
   "scripts": {
+    "postinstall": "(cd scripts; make)",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

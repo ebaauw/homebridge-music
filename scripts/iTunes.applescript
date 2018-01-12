@@ -1,5 +1,7 @@
-# homebridge-music/src/iTunes.applescript
-# (C) 2016, Erik Baauw
+# homebridge-music/scripts/iTunes.applescript
+# Copyright © 2016-2018 Erik Baauw. All rights reserved.
+#
+# Homebridge plugin for iTunes with Airplay speakers.
 #
 # Player: iTunes
 # Speakers: iTunes Airplay devices

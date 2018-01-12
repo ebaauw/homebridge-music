@@ -1,5 +1,7 @@
-# homebridge-music/src/Airfoil.applescript
-# (C) 2016, Erik Baauw
+# homebridge-music/scripts/Airfoil.applescript
+# Copyright © 2016-2018 Erik Baauw. All rights reserved.
+#
+# Homebridge plugin for iTunes with Airplay speakers.
 #
 # Player: iTunes
 # Speakers: Airfoil, see: https://www.rogueamoeba.com/airfoil

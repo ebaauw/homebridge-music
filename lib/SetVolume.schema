@@ -1,5 +1,5 @@
 {
-  "description": "SetVolume.schema, (C) 2016, Erik Baauw",
+  "description": "SetVolume.schema. Copyright © 2016-2018 Erik Baauw. All rights reserved.",
   "type": "object",
   "properties": {
     "volume": {

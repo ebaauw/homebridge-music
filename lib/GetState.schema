@@ -1,5 +1,5 @@
 {
-  "description": "GetState.schema, (C) 2016, Erik Baauw",
+  "description": "GetState.schema. Copyright © 2016-2018 Erik Baauw. All rights reserved.",
   "type": "object",
   "properties": {
     "on": {
