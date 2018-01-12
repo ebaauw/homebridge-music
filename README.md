@@ -80,7 +80,7 @@ Function | Schema | Description
 
 These functions return a JSON string that conforms to the corresponding schema in `/usr/local/lib/node_modules/homebridge-music//lib`.
 
-You can add your own script to support your favourite music player.  To verify whether your script returns valid responses, you might want to use [JSON Scheme Lint](http://jsonschemalint.com/).
+You can add your own script to support your favourite music player.  To verify whether your script returns valid responses, you might want to use [JSON Schema Lint](http://jsonschemalint.com/).
 
 ### Caveats
 The homebridge-music plugin is a hobby project of mine, provided as-is, with no warranty whatsoever.  I had been running it successfully at my home for years, but your mileage might vary.  Please report any issues on [GitHub](https://github.com/ebaauw/homebridge-music/issues).
