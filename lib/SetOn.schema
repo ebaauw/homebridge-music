@@ -1,0 +1,16 @@
+{
+  "description": "SetOn.schema, (C) 2016, Erik Baauw",
+  "type": "object",
+  "properties": {
+    "on": {
+      "type": "boolean"
+    },
+    "track": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 255
+    }
+  },
+  "additionalProperties": false,
+  "required": ["on"]
+}

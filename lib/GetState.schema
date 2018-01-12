@@ -1,0 +1,42 @@
+{
+  "description": "GetState.schema, (C) 2016, Erik Baauw",
+  "type": "object",
+  "properties": {
+    "on": {
+      "type": "boolean"
+    },
+    "volume": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "track": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 255
+    },
+    "speakers": {
+      "type": "object",
+      "patternProperties": {
+	"^.{1,255}$": {
+	  "type": "object",
+	  "properties": {
+	    "on": {
+	      "type": "boolean"
+	    },
+	      "volume": {
+	      "type": "integer",
+	      "minimum": 0,
+	      "maximum": 100
+	    }
+	  },
+	  "additionalProperties": false,
+	  "required": ["on", "volume"]
+	}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "required": ["on", "volume", "speakers"]
+}

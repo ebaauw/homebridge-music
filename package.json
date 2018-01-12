@@ -1,0 +1,31 @@
+{
+  "name": "homebridge-music",
+  "description": "Homebridge plugin for iTunes",
+  "version": "0.0.0",
+  "author": "Erik Baauw",
+  "license": "Apache-2.0",
+  "keywords": [
+    "homebridge-plugin"
+  ],
+  "main": "index.js",
+  "engines": {
+    "homebridge": "^0.4.33",
+    "node": "^8.9.4"
+  },
+  "dependencies": {
+    "applescript": "^1.0.0",
+    "is-my-json-valid": "^2.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebaauw/homebridge-music.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ebaauw/homebridge-music/issues"
+  },
+  "homepage": "https://github.com/ebaauw/homebridge-music#readme"
+}

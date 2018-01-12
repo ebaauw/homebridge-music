@@ -1,0 +1,13 @@
+{
+  "description": "SetVolume.schema, (C) 2016, Erik Baauw",
+  "type": "object",
+  "properties": {
+    "volume": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    }
+  },
+  "additionalProperties": false,
+  "required": ["volume"]
+}
