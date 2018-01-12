@@ -32,15 +32,15 @@ The homebridge-music plugin creates an accessory *Music* for the player.  By def
 
 For each AirPlay or Airfoil speaker, homebridge-music creates an additional accessory, named after the speaker.  By default, these accessory contain a single `Switch` service, with the same name as the accessory.  In addition to the standard `Power State` characteristic for play/pause control, an additional characteristic is provided for `Volume`.
 
-Note that neither Siri nor the Apple's Home app support `Volume`, even thought this is a standard HomeKit characteristic.  Because of this, the type of the service, as well as the type of characteristic used for volume can be changed from `config.json`, see [**Configuration**](#configuration) and [issue #10](https://github.com/ebaauw/homebridge-zp/issues/10).
+Note that neither Siri nor the Apple's Home app support `Volume`, even thought this is a standard HomeKit characteristic.  Because of this, the type of the service, as well as the type of characteristic used for volume can be changed from `config.json`, see [**Configuration**](#configuration) and [homebridge-zp issue #10](https://github.com/ebaauw/homebridge-zp/issues/10).
 
 ### Installation
 The homebridge-music plugin obviously needs homebridge, which, in turn needs Node.js.  I've followed these steps to set it up on my macOS server:
 
-- Install the Node.js JavaScript runtime `node`, from its [website](https://nodejs.org).  I'm using v8.9.4 LTS for macOS (x64).  This includes the `npm` package manager;
+- Install the latest v8 LTS version of Node.js.  On macOS, download the [8.x.x LTS](https://nodejs.org) installer.  This includes the `npm` package manager;
 - Make sure `/usr/local/bin` is in your `$PATH`, as `node`, `npm`, and, later, `homebridge` install there;
 - You might want to update `npm` through `sudo npm -g update npm@latest`;
-- Install homebridge through `sudo npm -g install homebridge --unsafe-perm`.  Then follow the instructions on [GitHub](https://github.com/nfarina/homebridge#installation) to create a `config.json` in `~/.homebridge`, as described;
+- Install homebridge through `sudo npm -g install homebridge --unsafe-perm`.  Follow the instructions on [GitHub](https://github.com/nfarina/homebridge#installation) to create a `config.json` in `~/.homebridge`, as described;
 - Install the homebridge-music plugin through `sudo npm -g install homebridge-music --unsafe-perm`;
 - Edit `~/.homebridge/config.json` and add the Music platform provided by homebridge-music, see [**Configuration**](#configuration).
 
@@ -59,7 +59,7 @@ The following optional parameters can be added to modify homebridge-music's beha
 
 Key | Default | Description
 --- | ------- | -----------
-`service` | `"switch"` | Defines what type of service and volume characteristic homebridge-zp uses.  Possible values are: `"switch"` for `Switch` and `Volume`; `"speaker"` for `Speaker` and `Volume`; `"light"` for `LightBulb` and `Brightness`; and `"fan"` for `Fan` and `Rotation Speed`.  Selecting `"light"` or `"fan"` enables changing the Sonos volume from Siri and from Apple's Home app.  Selecting `"speaker"` is not supported by the Apple's Home app.
+`service` | `"switch"` | Defines what type of service and volume characteristic homebridge-zp uses.  Possible values are: `"switch"` for `Switch` and `Volume`; `"speaker"` for `Speaker` and `Volume`; `"light"` for `LightBulb` and `Brightness`; and `"fan"` for `Fan` and `Rotation Speed`.  Selecting `"light"` or `"fan"` enables changing the volume from Siri and from Apple's Home app.  Selecting `"speaker"` is not supported by the Apple's Home app.
 `brightness` | `false` | Flag whether to expose volume as `Brightness` in combination with `Switch` or `Speaker`.  Setting this flag enables volume control from Siri.
 `script` | `"iTunes"` | Name of the AppleScript library to interact with the player and speakers, see [**AppleScript**](#applescript).
 `speakername` | `".*"` _(any)_ | Regular expression to be used as filter for speaker names.
@@ -67,7 +67,7 @@ Key | Default | Description
 `heartrate` | 5 |	Heartbeat interval in seconds.  Player and speaker states are refreshed every heartrate seconds.
 
 ### AppleScript
-homebridge-music interacts with the music player and speakers is through AppleScript.  Each player/speaker combination has an accosiated AppleScript file in `./src`, that provides the following functions to homebridge-music:
+homebridge-music interacts with the music player and speakers is through AppleScript.  Each player/speaker combination has an associated AppleScript file in `/usr/local/lib/node_modules/homebridge-music/scripts`, that provides the following functions to homebridge-music:
 
 Function | Schema | Description
 --- | ------- | -----------
@@ -78,7 +78,9 @@ Function | Schema | Description
 `setSpeakerOn(id, on)` | `SetOn` | Switches Speaker On/Off.
 `setSpeakerVolume(id, vol)` | `SetVolume` | Sets Speaker Volume.
 
-These functions return a JSON string that conforms to the corresponding schema in `./lib`.  To check for valid schemas, see http://jsonschemalint.com/.
+These functions return a JSON string that conforms to the corresponding schema in `/usr/local/lib/node_modules/homebridge-music//lib`.
+
+You can add your own script to support your favourite music player.  To verify whether your script returns valid responses, you might want to use [JSON Scheme Lint](http://jsonschemalint.com/).
 
 ### Caveats
 The homebridge-music plugin is a hobby project of mine, provided as-is, with no warranty whatsoever.  I had been running it successfully at my home for years, but your mileage might vary.  Please report any issues on [GitHub](https://github.com/ebaauw/homebridge-music/issues).
