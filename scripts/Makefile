@@ -11,4 +11,4 @@ SCRIPTS = iTunes.scpt Airfoil.scpt EyeTV.scpt
 all:	$(SCRIPTS)
 
 clean:
-	rm -f $(SCRIPTS)
+	@rm -f $(SCRIPTS)

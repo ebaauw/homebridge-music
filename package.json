@@ -19,7 +19,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "postinstall": "(cd scripts; make)",
+    "prepare": "(cd scripts; make)",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
