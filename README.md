@@ -41,7 +41,7 @@ The homebridge-music plugin obviously needs homebridge, which, in turn needs Nod
 - Make sure `/usr/local/bin` is in your `$PATH`, as `node`, `npm`, and, later, `homebridge` install there;
 - You might want to update `npm` through `sudo npm -g update npm@latest`;
 - Install homebridge through `sudo npm -g install homebridge --unsafe-perm`.  Follow the instructions on [GitHub](https://github.com/nfarina/homebridge#installation) to create a `config.json` in `~/.homebridge`, as described;
-- Install the homebridge-music plugin through `sudo npm -g install homebridge-music --unsafe-perm`;
+- Install the homebridge-music plugin through `sudo npm -g install homebridge-music`;
 - Edit `~/.homebridge/config.json` and add the Music platform provided by homebridge-music, see [**Configuration**](#configuration).
 
 Once homebridge is up and running with the homebridge-music plugin, you might want to daemonise it and start it automatically on login or system boot.  See the [homebridge Wiki](https://github.com/nfarina/homebridge/wiki) for more info how to do that on MacOS.
