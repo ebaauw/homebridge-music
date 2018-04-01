@@ -3,12 +3,12 @@
 //
 // Homebridge plugin for iTunes with Airplay speakers.
 
-'use strict';
+'use strict'
 
-const MusicPlatformModule = require('./lib/MusicPlatform');
-const MusicPlatform = MusicPlatformModule.MusicPlatform;
+const MusicPlatformModule = require('./lib/MusicPlatform')
+const MusicPlatform = MusicPlatformModule.MusicPlatform
 
 module.exports = (homebridge) => {
-  MusicPlatformModule.setHomebridge(homebridge);
-  homebridge.registerPlatform('homebridge-music', 'Music', MusicPlatform);
-};
+  MusicPlatformModule.setHomebridge(homebridge)
+  homebridge.registerPlatform('homebridge-music', 'Music', MusicPlatform)
+}
