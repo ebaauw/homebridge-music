@@ -23,11 +23,12 @@ This [homebridge](https://github.com/nfarina/homebridge) plugin exposes controls
 Note: this is my old, never before published, plugin from 2016 that I used to control my music, before moving to Sonos and [homebridge-zp](https://github.com/ebaauw/homebridge-zp).
 
 ### Prerequisites
+You need a macOS system to run homebridge-music.  AppleScript is used to communicate with iTunes, EyeTV, or another music player, and that only runs on macOS.
+
 To interact with HomeKit, you need Siri or a HomeKit app on an iPhone, Apple Watch, iPad, iPod Touch, or Apple TV (4th generation or later).  I recommend to use the latest released versions of iOS, watchOS, and tvOS.  
 Please note that Siri and even Apple's [Home](https://support.apple.com/en-us/HT204893) app still provide only limited HomeKit support.  To use the full features of homebridge-zp, you might want to check out some other HomeKit apps, like Elgato's [Eve](https://www.elgato.com/en/eve/eve-app) app (free) or Matthias Hochgatterer's [Home](http://selfcoded.com/home/) app (paid).  
 For HomeKit automation, you need to setup an Apple TV (4th generation or later) or iPad as [Home Hub](https://support.apple.com/en-us/HT207057).
 
-You need a macOS system to run homebridge-music.
 
 ### Player and Speakers
 The homebridge-music plugin creates an accessory *Music* for the player.  By default, this accessory contains a single `Switch` service, with the same name as the accessory.  In addition to the standard `Power State` characteristic for play/pause control, additional characteristics are provided for `Volume`, `Change Track`, and `Current Track` (read-only).  Note that `Current Track` and `Change Group` are custom characteristics.  They might not be supported by all HomeKit apps, see [**Caveats**](#caveats).  
