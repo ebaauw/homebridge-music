@@ -10,12 +10,12 @@
   "main": "index.js",
   "engines": {
     "homebridge": "^0.4.44",
-    "node": "^8.11.3"
+    "node": "^8.11.4"
   },
   "dependencies": {
     "applescript": "^1.0.0",
-    "is-my-json-valid": "^2.17.2",
-    "semver": "^5.5.0"
+    "is-my-json-valid": "^2.19.0",
+    "semver": "^5.5.1"
   },
   "devDependencies": {
     "standard": "*"
