@@ -40,7 +40,7 @@ Note that neither Siri nor the Apple's Home app support `Volume`, even thought t
 ### Installation
 The homebridge-music plugin obviously needs homebridge, which, in turn needs Node.js.  I've followed these steps to set it up on my macOS server:
 
-- Install the latest v8 LTS version of Node.js.  On macOS, download the [8.x.x LTS](https://nodejs.org) installer.  This includes the `npm` package manager;
+- Install the latest v10 LTS version of Node.js.  On macOS, download the [10.x.x LTS](https://nodejs.org) installer.  This includes the `npm` package manager;
 - Make sure `/usr/local/bin` is in your `$PATH`, as `node`, `npm`, and, later, `homebridge` install there;
 - You might want to update `npm` through `sudo npm -g update npm@latest`;
 - Install homebridge through `sudo npm -g install homebridge --unsafe-perm`.  Follow the instructions on [GitHub](https://github.com/nfarina/homebridge#installation) to create a `config.json` in `~/.homebridge`, as described;
