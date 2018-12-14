@@ -10,12 +10,12 @@
   "main": "index.js",
   "engines": {
     "homebridge": "^0.4.45",
-    "node": "^10.13.0"
+    "node": "^10.14.1"
   },
   "dependencies": {
-    "applescript": "^1.0.0",
-    "is-my-json-valid": "^2.19.0",
-    "semver": "^5.6.0"
+    "applescript": "~1.0.0",
+    "is-my-json-valid": "~2.19.0",
+    "semver": "~5.6.0"
   },
   "scripts": {
     "prepare": "(cd scripts; make)",
