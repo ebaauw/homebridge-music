@@ -1,5 +1,5 @@
 # homebridge-music/scripts/Makefile
-# Copyright © 2016-2018 Erik Baauw. All rights reserved.
+# Copyright © 2016-2019 Erik Baauw. All rights reserved.
 #
 # Homebridge plugin for iTunes with Airplay speakers.
 
