@@ -43,7 +43,7 @@ The homebridge-music plugin obviously needs homebridge, which, in turn needs Nod
 - Install the latest v10 LTS version of Node.js.  On macOS, download the [10.x.x LTS](https://nodejs.org) installer.  This includes the `npm` package manager;
 - Make sure `/usr/local/bin` is in your `$PATH`, as `node`, `npm`, and, later, `homebridge` install there;
 - You might want to update `npm` through `sudo npm -g update npm@latest`;
-- Install homebridge through `sudo npm -g install homebridge --unsafe-perm`.  Follow the instructions on [GitHub](https://github.com/nfarina/homebridge#installation) to create a `config.json` in `~/.homebridge`, as described;
+- Install homebridge through `sudo npm -g install homebridge`.  Follow the instructions on [GitHub](https://github.com/nfarina/homebridge#installation) to create a `config.json` in `~/.homebridge`, as described;
 - Install the homebridge-music plugin through `sudo npm -g install homebridge-music`;
 - Edit `~/.homebridge/config.json` and add the Music platform provided by homebridge-music, see [**Configuration**](#configuration).
 
@@ -81,7 +81,7 @@ Function | Schema | Description
 `setSpeakerOn(id, on)` | `SetOn` | Switches Speaker On/Off.
 `setSpeakerVolume(id, vol)` | `SetVolume` | Sets Speaker Volume.
 
-These functions return a JSON string that conforms to the corresponding schema in `/usr/local/lib/node_modules/homebridge-music//lib`.
+These functions return a JSON string that conforms to the corresponding schema in `/usr/local/lib/node_modules/homebridge-music/lib`.
 
 You can add your own script to support your favourite music player.  To verify whether your script returns valid responses, you might want to use [JSON Schema Lint](http://jsonschemalint.com/).
 
