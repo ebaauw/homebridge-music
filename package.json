@@ -9,7 +9,7 @@
   ],
   "main": "index.js",
   "engines": {
-    "homebridge": "^0.4.48",
+    "homebridge": "^0.4.49",
     "node": "^10.15.3"
   },
   "dependencies": {
