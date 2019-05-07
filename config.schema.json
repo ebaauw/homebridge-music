@@ -1,0 +1,102 @@
+{
+  "pluginAlias": "Music",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "Homebridge plugin for iTunes with Airplay speakers",
+  "footerDisplay": "For details on the AppleScript library, look [here](https://github.com/ebaauw/homebridge-music#applescript).",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "description": "Plugin name as displayed in the homebridge log.",
+        "type": "string",
+        "required": true,
+        "default": "Music"
+      },
+      "track": {
+        "title": "Default Track",
+	      "description": "Name of the track to play, when no track has been selected.",
+        "type": "string"
+      },
+      "script": {
+        "title": "AppleScript Library",
+	      "description": "Name of the AppleScript library to interact with the player and speakers, see below.  Default: 'iTunes'.",
+        "type": "string"
+      },
+      "speakername": {
+        "title": "Speaker Name Filter",
+        "description": "Regular expression to be used as filter for speaker names.  Default: '.*' (all).",
+        "type": "string"
+      },
+      "service": {
+        "description": "HomeKit service for Player and Speakers.",
+        "type": "string",
+        "required": true,
+        "default": "switch",
+        "oneOf": [
+          {
+            "title": "Switch",
+            "enum": [ "switch" ]
+          },
+          {
+            "title": "Lightbulb",
+            "enum": [ "light" ]
+          },
+          {
+            "title": "Speaker",
+            "enum": [ "speaker" ]
+          },
+          {
+            "title": "Fan",
+            "enum": [ "fan" ]
+          }
+        ]
+      },
+      "brightness": {
+        "description": "Expose volume as Brightness.",
+        "type": "boolean"
+      },
+      "heartrate": {
+        "description": "Heartbeat interval in seconds.  Default: 5.",
+        "type": "integer",
+        "minimum": 2,
+        "maximum": 60
+      }
+    }
+  },
+  "form": [
+    "name",
+    "track",
+    {
+      "type": "fieldset",
+      "expandable": true,
+      "title": "What",
+      "description": "Select what to expose to HomeKit.",
+      "items": [
+        "script",
+        "speakername"
+      ]
+    },
+    {
+      "type": "fieldset",
+      "expandable": true,
+      "title": "How",
+      "description": "Select how to expose Player and Speakers to HomeKit.",
+      "items": [
+        "service",
+	      {
+          "key": "brightness",
+          "condition": { "functionBody": "return model.service === 'switch' || model.service === 'speaker'" }
+        }
+      ]
+    },
+    {
+      "type": "fieldset",
+      "expandable": true,
+      "title": "Advanced Settings",
+      "items": [
+        "heartrate"
+      ]
+    }
+  ]
+}
