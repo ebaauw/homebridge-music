@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "applescript": "~1.0.0",
-    "is-my-json-valid": "~2.19.0",
-    "semver": "~6.0.0"
+    "is-my-json-valid": "~2.20.0",
+    "semver": "~6.1.0"
   },
   "scripts": {
     "prepare": "(cd scripts; make)",
