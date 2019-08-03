@@ -22,7 +22,7 @@
   },
   "scripts": {
     "prepare": "standard && (cd scripts; make)",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard && echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
