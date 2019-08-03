@@ -21,7 +21,7 @@
     "semver": "~6.3.0"
   },
   "scripts": {
-    "prepare": "(cd scripts; make)",
+    "prepare": "standard; (cd scripts; make)",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
