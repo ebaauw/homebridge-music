@@ -10,7 +10,7 @@
   "main": "index.js",
   "engines": {
     "homebridge": "^0.4.50",
-    "node": "^10.16.0"
+    "node": "^10.16.1"
   },
   "os": [
     "darwin"
@@ -18,7 +18,7 @@
   "dependencies": {
     "applescript": "~1.0.0",
     "is-my-json-valid": "~2.20.0",
-    "semver": "~6.2.0"
+    "semver": "~6.3.0"
   },
   "scripts": {
     "prepare": "(cd scripts; make)",
