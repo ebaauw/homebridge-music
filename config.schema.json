@@ -61,6 +61,12 @@
         "type": "integer",
         "minimum": 2,
         "maximum": 60
+      },
+      "timeout": {
+        "description": "Timeout in seconds for AppleScript command.  Default: 5.",
+        "type": "integer",
+        "minumum": 5,
+        "maximum": 30
       }
     }
   },
@@ -95,7 +101,8 @@
       "expandable": true,
       "title": "Advanced Settings",
       "items": [
-        "heartrate"
+        "heartrate",
+        "timeout"
       ]
     }
   ]
