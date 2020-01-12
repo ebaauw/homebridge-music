@@ -6,13 +6,13 @@
 ## Homebridge plugin for iTunes with Airplay speakers
 Copyright © 2016-2020 Erik Baauw. All rights reserved.
 
-This [homebridge](https://github.com/nfarina/homebridge) plugin exposes controls to Apple's [HomeKit](http://www.apple.com/ios/home/) for a music player, like iTunes or EyeTV, running on macOS.  It provides the following features:
-- HomeKit support for controlling iTunes or [EyeTV](https://www.geniatech.eu/):
+This [homebridge](https://github.com/nfarina/homebridge) plugin exposes controls to Apple's [HomeKit](http://www.apple.com/ios/home/) for a music player, like iTunes/Music or EyeTV, running on macOS.  It provides the following features:
+- HomeKit support for controlling iTunes (Music as of macOS 10.15 Catalina) or [EyeTV](https://www.geniatech.eu/):
   - On/Off control;
   - Volume control;
   - Previous/Next track/channel;
   - View current track/channel;
-- HomeKit support for controlling AirPlay speakers connected to iTunes on macOS:
+- HomeKit support for controlling AirPlay speakers connected to iTunes/Music on macOS:
   - On/Off control;
   - Volume control;
 - HomeKit control for [Airfoil](https://rogueamoeba.com/airfoil/)-connected speakers:
@@ -23,10 +23,10 @@ This [homebridge](https://github.com/nfarina/homebridge) plugin exposes controls
 Note: this is my old, never before published, plugin from 2016 that I used to control my music, before moving to Sonos and [homebridge-zp](https://github.com/ebaauw/homebridge-zp).
 
 ### Prerequisites
-You need a macOS system to run homebridge-music.  AppleScript is used to communicate with iTunes, EyeTV, or another music player, and that only runs on macOS.
+You need a macOS system to run homebridge-music.  AppleScript is used to communicate with iTunes/Music, EyeTV, or another music player, and that only runs on macOS.
 
 To interact with HomeKit, you need Siri or a HomeKit app on an iPhone, Apple Watch, iPad, iPod Touch, or Apple TV (4th generation or later).  I recommend to use the latest released versions of iOS, watchOS, and tvOS.  
-Please note that Siri and even Apple's [Home](https://support.apple.com/en-us/HT204893) app still provide only limited HomeKit support.  To use the full features of homebridge-zp, you might want to check out some other HomeKit apps, like Elgato's [Eve](https://www.elgato.com/en/eve/eve-app) app (free) or Matthias Hochgatterer's [Home](http://selfcoded.com/home/) app (paid).  
+Please note that Siri and even Apple's [Home](https://support.apple.com/en-us/HT204893) app still provide only limited HomeKit support.  To use the full features of homebridge-music, you might want to check out some other HomeKit apps, like Elgato's [Eve](https://www.elgato.com/en/eve/eve-app) app (free) or Matthias Hochgatterer's [Home](http://selfcoded.com/home/) app (paid).  
 For HomeKit automation, you need to setup an Apple TV (4th generation or later) or iPad as [Home Hub](https://support.apple.com/en-us/HT207057).
 
 
@@ -62,7 +62,7 @@ The following optional parameters can be added to modify homebridge-music's beha
 
 Key | Default | Description
 --- | ------- | -----------
-`service` | `"switch"` | Defines what type of service and volume characteristic homebridge-zp uses.  Possible values are: `"switch"` for `Switch` and `Volume`; `"speaker"` for `Speaker` and `Volume`; `"light"` for `LightBulb` and `Brightness`; and `"fan"` for `Fan` and `Rotation Speed`.  Selecting `"light"` or `"fan"` enables changing the volume from Siri and from Apple's Home app.  Selecting `"speaker"` is not supported by the Apple's Home app.
+`service` | `"switch"` | Defines what type of service and volume characteristic homebridge-music uses.  Possible values are: `"switch"` for `Switch` and `Volume`; `"speaker"` for `Speaker` and `Volume`; `"light"` for `LightBulb` and `Brightness`; and `"fan"` for `Fan` and `Rotation Speed`.  Selecting `"light"` or `"fan"` enables changing the volume from Siri and from Apple's Home app.  Selecting `"speaker"` is not supported by the Apple's Home app.
 `brightness` | `false` | Flag whether to expose volume as `Brightness` in combination with `Switch` or `Speaker`.  Setting this flag enables volume control from Siri.
 `script` | `"iTunes"` | Name of the AppleScript library to interact with the player and speakers, see [**AppleScript**](#applescript).
 `speakername` | `".*"` _(any)_ | Regular expression to be used as filter for speaker names.
@@ -70,7 +70,25 @@ Key | Default | Description
 `heartrate` | 5 |	Heartbeat interval in seconds.  Player and speaker states are refreshed every heartrate seconds.
 
 ### AppleScript
-homebridge-music interacts with the music player and speakers is through AppleScript.  Each player/speaker combination has an associated AppleScript file in `/usr/local/lib/node_modules/homebridge-music/scripts`, that provides the following functions to homebridge-music:
+homebridge-music interacts with the music player and speakers is through AppleScript.  Each player/speaker combination has an associated AppleScript file in `/usr/local/lib/node_modules/homebridge-music/scripts`.
+
+homebridge-music ships with the following scripts:
+
+Script          | Player | Speakers | macOS
+--------------- | -------| -------- | -----------
+`iTunes`        | iTunes | iTunes AirPlay speakers | < 10.15 Catalina
+`Music`         | Music  | Music AirPlay speakers | >= 10.15 Catalina
+`Airfoil`       | iTunes | [Airfoil](https://www.rogueamoeba.com/airfoil) | < 10.15 Catalina
+`Music-Airfoil` | Music  | [Airfoil](https://www.rogueamoeba.com/airfoil) | >= 10.15 Catalina
+`EyeTV`         | [EyeTV v3](https://www.geniatech.eu/product/eyetv-3/)* | [Airfoil](https://www.rogueamoeba.com/airfoil) | < 10.15 Catalina
+_n/a_           | [EyeTV v4](https://www.geniatech.eu/product/eyetv-4/)* | [Airfoil](https://www.rogueamoeba.com/airfoil) | n/a
+
+\*) EyeTV v3 is a 32-bit application, which are no longer supported on macOS 10.15 Catalina.<br>
+\*) EyeTV v4 is a 64-bit application and runs on Catalina,
+but it (currently?) lacks proper AppleScript support,
+see issue [#14](https://github.com/ebaauw/homebridge-music/issues/14).
+
+Each script provides the following functions to homebridge-music:
 
 Function | Schema | Description
 --- | ------- | -----------
