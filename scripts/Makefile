@@ -1,12 +1,12 @@
 # homebridge-music/scripts/Makefile
-# Copyright © 2016-2019 Erik Baauw. All rights reserved.
+# Copyright © 2016-2020 Erik Baauw. All rights reserved.
 #
 # Homebridge plugin for iTunes with Airplay speakers.
 
 %.scpt: %.applescript
 	osacompile -o $@ $<
 
-SCRIPTS = iTunes.scpt Airfoil.scpt EyeTV.scpt
+SCRIPTS = Music.scpt Airfoil.scpt EyeTV.scpt
 
 all:	$(SCRIPTS)
 
