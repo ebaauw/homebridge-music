@@ -10,7 +10,7 @@
   "main": "index.js",
   "engines": {
     "homebridge": "^0.4.50",
-    "node": "^12.14.0"
+    "node": "^12.14.1"
   },
   "os": [
     "darwin"
@@ -21,7 +21,7 @@
     "semver": "~7.1.1"
   },
   "scripts": {
-    "prepare": "standard && (cd scripts; make)",
+    "prepare": "standard && (cd scripts; make catalina)",
     "test": "standard && echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
