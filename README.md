@@ -2,6 +2,8 @@
 [![npm](https://img.shields.io/npm/dt/homebridge-music.svg)](https://www.npmjs.com/package/homebridge-music)
 [![npm](https://img.shields.io/npm/v/homebridge-music.svg)](https://www.npmjs.com/package/homebridge-music)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![GitHub issues](https://img.shields.io/github/issues/ebaauw/homebridge-music)](https://github.com/ebaauw/homebridge-music/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/ebaauw/homebridge-music)](https://github.com/ebaauw/homebridge-music/pulls)
 
 ## Homebridge plugin for iTunes with Airplay speakers
 Copyright © 2016-2020 Erik Baauw. All rights reserved.
