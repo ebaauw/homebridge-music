@@ -1,10 +1,14 @@
 # homebridge-music/scripts/Music-Airfoil.applescript
-# Copyright © 2016-2020 Erik Baauw. All rights reserved.
+# Copyright ï¿½ 2016-2020 Erik Baauw. All rights reserved.
 #
 # Homebridge plugin for Music with Airplay speakers.
 #
 # Player: Music
 # Speakers: Airfoil, see: https://www.rogueamoeba.com/airfoil
+
+on getInitialState()
+	getState()
+end getInitialState
 
 on getState()
 	set sp to getSpeakerStates()

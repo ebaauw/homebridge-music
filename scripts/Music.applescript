@@ -1,5 +1,5 @@
 # homebridge-music/scripts/Music.applescript
-# Copyright © 2016-2020 Erik Baauw. All rights reserved.
+# Copyright Â© 2016-2020 Erik Baauw. All rights reserved.
 #
 # Homebridge plugin for iTunes with Airplay speakers.
 #
@@ -8,7 +8,8 @@
 
 set iTunes to "Music"
 
-on getState()
+#called by homebridge on startup, will launch Music if not already running
+on getInitialState()
 	set sp to getSpeakerStates()
 	tell application "Music"
 		if player state is playing then
@@ -18,6 +19,23 @@ on getState()
 		end if
 		get "{\"on\":" & (player state is playing) & ",\"volume\":" & sound volume & ",\"track\":\"" & t & "\",\"speakers\":" & sp & "}"
 	end tell
+end getInitialState
+
+on getState()
+	#check if Music is running before trying to get the state - if not running return default JSON
+	if application "Music" is running then
+		set sp to getSpeakerStates()
+		tell application "Music"
+			if player state is playing then
+				set t to name of current track
+			else
+				set t to ""
+			end if
+			get "{\"on\":" & (player state is playing) & ",\"volume\":" & sound volume & ",\"track\":\"" & t & "\",\"speakers\":" & sp & "}"
+		end tell
+	else
+		get "{\"on\":false,\"volume\":100,\"track\":\"\",\"speakers\":{\"Computer\":{\"on\":false,\"volume\":0}}}"
+	end if
 end getState
 
 on setPlayerOn(o, t)
