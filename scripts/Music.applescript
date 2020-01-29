@@ -38,10 +38,14 @@ on getState()
 	end if
 end getState
 
-on setPlayerOn(o, t)
+on setPlayerOn(o, t, l)
 	tell application "Music"
 		if o then
-			play track t
+			if {l starts with "itmss://"} then
+				open location l
+			else
+				play track t
+			end if
 			set mute to false
 		else
 			stop
