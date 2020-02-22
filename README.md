@@ -94,7 +94,7 @@ Each script provides the following functions to homebridge-music:
 
 Function | Schema | Description
 --- | ------- | -----------
-`getMusicState(initial)` | `GetState` | Gets player and speaker states.
+`getState(initial)` | `GetState` | Gets player and speaker states.
 `setPlayerOn(on, track)` | `SetOn` |	Switches Player On/Off.
 `changeTrack(next)` | `SetOn` | Sets next/previous track.
 `setPlayerVolume(vol)` | `SetVolume` | Sets Player Volume.
