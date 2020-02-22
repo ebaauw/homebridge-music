@@ -13,7 +13,7 @@ on getState(i)
 			if player state is playing then
 				if i then
 					tell me to setAudioSource("Music")
-					end if
+				end if
 				set t to name of current track
 			else
 				set t to ""
