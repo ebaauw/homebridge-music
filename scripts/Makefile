@@ -6,7 +6,7 @@
 %.scpt: %.applescript
 	osacompile -o $@ $<
 
-SCRIPTS = iTunes.scpt Airfoil.scpt EyeTV.scpt
+SCRIPTS = iTunes.scpt iTunes-Airfoil.scpt EyeTV-Airfoil.scpt
 SCRIPTS_CATALINA = Music.scpt Music-Airfoil.scpt
 
 all:	$(SCRIPTS)
