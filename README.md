@@ -69,6 +69,7 @@ Key | Default | Description
 `script` | `"iTunes"` | Name of the AppleScript library to interact with the player and speakers, see [**AppleScript**](#applescript).
 `speakername` | `".*"` _(any)_ | Regular expression to be used as filter for speaker names.
 `track` | `""` _(none)_ | Name of the track for the player to start.
+`resetTrack` | `false` | Reset current track to default track on stop.
 `heartrate` | 5 |	Heartbeat interval in seconds.  Player and speaker states are refreshed every heartrate seconds.
 
 ### AppleScript

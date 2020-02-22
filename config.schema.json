@@ -18,6 +18,11 @@
 	      "description": "Name of the track to play, when no track has been selected.",
         "type": "string"
       },
+      "resetTrack": {
+        "title": "Reset Track",
+        "description": "Reset current track to default track on stop.  Default: false.",
+        "type": "boolean"
+      },
       "script": {
         "title": "AppleScript Library",
 	      "description": "Name of the AppleScript library to interact with the player and speakers, see below.  Default: 'iTunes'.",
@@ -73,6 +78,7 @@
   "form": [
     "name",
     "track",
+    "resetTrack",
     {
       "type": "fieldset",
       "expandable": true,
