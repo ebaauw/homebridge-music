@@ -6,16 +6,21 @@
 # Player: iTunes
 # Speakers: iTunes Airplay devices
 
-on getState()
-	set sp to getSpeakerStates()
-	tell application "iTunes"
-		if player state is playing then
-			set t to name of current track
-		else
-			set t to ""
-		end if
-		get "{\"on\":" & (player state is playing) & ",\"volume\":" & sound volume & ",\"track\":\"" & t & "\",\"speakers\":" & sp & "}"
-	end tell
+on getState(i)
+	if i or application "iTunes" is running then
+			set sp to getSpeakerStates()
+		tell application "iTunes"
+			if player state is playing then
+				set t to name of current track
+			else
+				set t to ""
+			end if
+			get "{\"on\":" & (player state is playing) & ",\"volume\":" & sound volume & ",\"track\":\"" & t & "\",\"speakers\":" & sp & "}"
+		end tell
+	else
+		get "{\"on\":false,\"volume\":0,\"track\":\"\",\"speakers\":{\"Computer\":{\"on\":false,\"volume\":0}}}"
+		
+	end if
 end getState
 
 on setPlayerOn(o, t)
