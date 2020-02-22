@@ -6,18 +6,20 @@
 # Player: Music
 # Speakers: Music Airplay devices
 
-set iTunes to "Music"
-
-on getState()
-	set sp to getSpeakerStates()
-	tell application "Music"
-		if player state is playing then
-			set t to name of current track
-		else
-			set t to ""
-		end if
-		get "{\"on\":" & (player state is playing) & ",\"volume\":" & sound volume & ",\"track\":\"" & t & "\",\"speakers\":" & sp & "}"
-	end tell
+on getState(i)
+	if i or application "Music" is running then
+		set sp to getSpeakerStates()
+		tell application "Music"
+			if player state is playing then
+				set t to name of current track
+			else
+				set t to ""
+			end if
+			get "{\"on\":" & (player state is playing) & ",\"volume\":" & sound volume & ",\"track\":\"" & t & "\",\"speakers\":" & sp & "}"
+		end tell
+	else
+		get "{\"on\":false,\"volume\":0,\"track\":\"\",\"speakers\":{\"Computer\":{\"on\":false,\"volume\":0}}}"
+	end if
 end getState
 
 on setPlayerOn(o, t)
@@ -69,8 +71,8 @@ on setSpeakerOn(sp, o)
 		set d to first AirPlay device whose name is sp
 		if o then
 			set selected of d to true
-			delay 1.0
-			set selected of first AirPlay device whose name is "Computer" to false
+			# delay 1.0
+			# set selected of first AirPlay device whose name is "Computer" to false
 		else
 			set selected of d to false
 		end if
@@ -82,7 +84,8 @@ on setSpeakerVolume(sp, v)
 	tell application "Music"
 		set d to first AirPlay device whose name is sp
 		set sound volume of d to v
-		get "{\"volume\":" & sound volume of d & "}"
+		# get "{\"volume\":" & sound volume of d & "}"
+		get "{\"volume\":" & v & "}"
 	end tell
 end setSpeakerVolume
 
@@ -92,7 +95,7 @@ on getSpeakerStates()
 		set sp to {}
 		repeat with d in AirPlay devices
 			# Don't use id of Airplay device, as this changes when iTunes is restarted
-			copy "\"" & name of d & "\":{\"on\":" & active of d & ",\"volume\":" & sound volume of d & "}" to end of sp
+			copy "\"" & name of d & "\":{\"on\":" & selected of d & ",\"volume\":" & sound volume of d & "}" to end of sp
 		end repeat
 		get "{" & sp & "}"
 	end tell
