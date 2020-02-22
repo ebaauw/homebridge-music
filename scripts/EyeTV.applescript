@@ -6,16 +6,23 @@
 # Player: EyeTV, see: https://www.geniatech.eu/
 # Speakers: Airfoil, see: https://www.rogueamoeba.com/airfoil
 
-on getState()
-	set sp to getSpeakerStates()
-	tell application "EyeTV"
-		if playing then
-			set t to name of channel [current channel]
-		else
-			set t to ""
-		end if
-		get "{\"on\":" & playing & ",\"volume\":" & ((playback volume * 100) as integer) & ",\"track\":\"" & t & "\",\"speakers\":" & sp & "}"
-	end tell
+on getState(i)
+	if i or application "EyeTV" is running then
+		set sp to getSpeakerStates()
+		tell application "EyeTV"
+			if playing then
+				if i then
+					tell me to setAudioSource("EyeTV")
+				end if
+				set t to name of channel [current channel]
+			else
+				set t to ""
+			end if
+			get "{\"on\":" & playing & ",\"volume\":" & ((playback volume * 100) as integer) & ",\"track\":\"" & t & "\",\"speakers\":" & sp & "}"
+		end tell
+	else
+		get "{\"on\":false,\"volume\":0,\"track\":\"\",\"speakers\":{\"Computer\":{\"on\":false,\"volume\":0}}}"
+	end if
 end getState
 
 on setPlayerOn(o, t)
