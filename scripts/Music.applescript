@@ -25,7 +25,11 @@ end getState
 on setPlayerOn(o, t)
 	tell application "Music"
 		if o then
-			play track t
+			if t starts with "itmss://" then
+				open location t
+			else
+				play track t
+			end if
 			set mute to false
 		else
 			stop
