@@ -1,5 +1,5 @@
 {
-  "description": "GetState.schema. Copyright © 2016-2019 Erik Baauw. All rights reserved.",
+  "description": "GetState.schema. Copyright © 2016-2020 Erik Baauw. All rights reserved.",
   "type": "object",
   "properties": {
     "on": {
@@ -18,21 +18,21 @@
     "speakers": {
       "type": "object",
       "patternProperties": {
-	"^.{1,255}$": {
-	  "type": "object",
-	  "properties": {
-	    "on": {
-	      "type": "boolean"
-	    },
-	      "volume": {
-	      "type": "integer",
-	      "minimum": 0,
-	      "maximum": 100
-	    }
-	  },
-	  "additionalProperties": false,
-	  "required": ["on", "volume"]
-	}
+        "^.{1,255}$": {
+          "type": "object",
+          "properties": {
+            "on": {
+              "type": "boolean"
+            },
+            "volume": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            }
+          },
+          "additionalProperties": false,
+          "required": ["on", "volume"]
+        }
       },
       "additionalProperties": false
     }
