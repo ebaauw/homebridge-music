@@ -25,7 +25,7 @@
       },
       "script": {
         "title": "AppleScript Library",
-	      "description": "Name of the AppleScript library to interact with the player and speakers, see below.  Default: 'iTunes'.",
+	      "description": "Name of the AppleScript library to interact with the player and speakers, see below.  Default: 'Music' or 'iTunes' (depending on macOS version).",
         "type": "string"
       },
       "speakername": {
