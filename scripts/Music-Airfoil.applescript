@@ -6,16 +6,23 @@
 # Player: Music
 # Speakers: Airfoil, see: https://www.rogueamoeba.com/airfoil
 
-on getState()
-	set sp to getSpeakerStates()
-	tell application "Music"
-		if player state is playing then
-			set t to name of current track
-		else
-			set t to ""
-		end if
-		get "{\"on\":" & (player state is playing) & ",\"volume\":" & sound volume & ",\"track\":\"" & t & "\",\"speakers\":" & sp & "}"
-	end tell
+on getState(i)
+	if i or application "Music" is running then
+		set sp to getSpeakerStates()
+		tell application "Music"
+			if player state is playing then
+				if i then
+					tell me to setAudioSource("Music")
+					end if
+				set t to name of current track
+			else
+				set t to ""
+			end if
+			get "{\"on\":" & (player state is playing) & ",\"volume\":" & sound volume & ",\"track\":\"" & t & "\",\"speakers\":" & sp & "}"
+		end tell
+	else
+		get "{\"on\":false,\"volume\":0,\"track\":\"\",\"speakers\":{\"Computer\":{\"on\":false,\"volume\":0}}}"
+	end if
 end getState
 
 on setPlayerOn(o, t)
