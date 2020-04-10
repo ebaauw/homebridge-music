@@ -9,17 +9,17 @@
   ],
   "main": "index.js",
   "engines": {
-    "homebridge": "~0.4.50",
-    "node": "^12.16.1"
+    "homebridge": "~0.4.53",
+    "node": "^12.16.2"
   },
   "os": [
     "darwin"
   ],
   "dependencies": {
     "applescript": "~1.0.0",
-    "homebridge-lib": "~4.5.5",
+    "homebridge-lib": "~4.5.7",
     "is-my-json-valid": "~2.20.0",
-    "semver": "~7.1.3"
+    "semver": "~7.2.2"
   },
   "scripts": {
     "prepare": "standard && (cd scripts; make catalina)",
