@@ -61,7 +61,7 @@ To install Homebridge Music:
 - Follow the instructions on the [Homebridge Wiki](https://github.com/homebridge/homebridge/wiki) to install Node.js and Homebridge on a macOS system;
 - Install the Homebridge Music plugin through Homebridge Config UI X or manually by:
   ```
-  $ sudo npm -g i homebridge-musicAccessories
+  $ sudo npm -g i homebridge-music
   ```
 - Edit `config.json` and add the `Music` platform provided by Homebridge Music, see [**Configuration**](#configuration).
 
