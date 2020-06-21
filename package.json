@@ -10,14 +10,14 @@
   "main": "index.js",
   "engines": {
     "homebridge": "^1.1.0",
-    "node": "^12.18.0"
+    "node": "^12.18.1"
   },
   "os": [
     "darwin"
   ],
   "dependencies": {
     "applescript": "^1.0.0",
-    "homebridge-lib": "^4.7.8",
+    "homebridge-lib": "^4.7.11",
     "is-my-json-valid": "^2.20.0",
     "semver": "^7.3.2"
   },
