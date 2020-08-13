@@ -10,15 +10,15 @@
   "main": "index.js",
   "engines": {
     "homebridge": "^1.1.0",
-    "node": "^12.18.2"
+    "node": "^12.18.3"
   },
   "os": [
     "darwin"
   ],
   "dependencies": {
     "applescript": "^1.0.0",
-    "homebridge-lib": "^4.7.12",
-    "is-my-json-valid": "^2.20.4",
+    "homebridge-lib": "^4.7.14",
+    "is-my-json-valid": "^2.20.5",
     "semver": "^7.3.2"
   },
   "scripts": {
@@ -32,5 +32,9 @@
   "bugs": {
     "url": "https://github.com/ebaauw/homebridge-music/issues"
   },
-  "homepage": "https://github.com/ebaauw/homebridge-music#readme"
+  "homepage": "https://github.com/ebaauw/homebridge-music#readme",
+  "funding": {
+    "type": "paypal",
+    "url": "https://www.paypal.me/ebaauw/EUR"
+  }
 }
