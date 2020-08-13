@@ -4,12 +4,15 @@
 <span align="center">
 
 # Homebridge Music
-[![npm](https://img.shields.io/npm/dt/homebridge-music.svg)](https://www.npmjs.com/package/homebridge-music)
-[![npm](https://img.shields.io/npm/v/homebridge-music.svg)](https://www.npmjs.com/package/homebridge-music)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![Homebridge Discord](https://img.shields.io/discord/432663330281226270?color=728ED5&logo=discord&label=discord)](https://discord.gg/hZubhrz)
+[![Downloads](https://img.shields.io/npm/dt/homebridge-music.svg)](https://www.npmjs.com/package/homebridge-music)
+[![Version](https://img.shields.io/npm/v/homebridge-music.svg)](https://www.npmjs.com/package/homebridge-music)
+[![Homebridge Discord](https://img.shields.io/discord/432663330281226270?color=728ED5&logo=discord&label=discord)](https://discord.gg/SpMcwN5)
+[![verified-by-homebridge](https://badgen.net/badge/homebridge/verified/purple)](https://github.com/homebridge/homebridge/wiki/Verified-Plugins)
+
 [![GitHub issues](https://img.shields.io/github/issues/ebaauw/homebridge-music)](https://github.com/ebaauw/homebridge-music/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/ebaauw/homebridge-music)](https://github.com/ebaauw/homebridge-music/pulls)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Contribute](https://img.shields.io/badge/contribute-paypal%20me-brightgreen)](https://www.paypal.me/ebaauw/EUR)
 
 </span>
 
@@ -46,7 +49,7 @@ For remote access and for HomeKit automations, you need to setup an Apple TV (4t
 
 ### Player and Speakers
 Homebridge Music creates an accessory *Music* for the player.
-By default, this accessory contains a single `Switch` service, with the same name as the accessory.
+By default, this accessory contains a single `ÂSwitch` service, with the same name as the accessory.
 In addition to the standard `On` characteristic for play/pause control, additional characteristics are provided for `Volume`, `Change Track`, and `Current Track` (read-only).
 
 For each AirPlay or Airfoil speaker, Homebridge Music creates an additional accessory, named after the speaker.
