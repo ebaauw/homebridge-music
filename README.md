@@ -12,7 +12,6 @@
 [![GitHub issues](https://img.shields.io/github/issues/ebaauw/homebridge-music)](https://github.com/ebaauw/homebridge-music/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/ebaauw/homebridge-music)](https://github.com/ebaauw/homebridge-music/pulls)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![Contribute](https://img.shields.io/badge/contribute-paypal%20me-brightgreen)](https://www.paypal.me/ebaauw/EUR)
 
 </span>
 
