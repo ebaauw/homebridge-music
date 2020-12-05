@@ -17,9 +17,9 @@
   ],
   "dependencies": {
     "applescript": "^1.0.0",
-    "homebridge-lib": "^5.0.0",
+    "homebridge-lib": "^4.8.3",
     "is-my-json-valid": "^2.20.5",
-    "semver": "^7.3.2"
+    "semver": "^7.3.4"
   },
   "scripts": {
     "prepare": "standard && (cd scripts; make catalina)",
