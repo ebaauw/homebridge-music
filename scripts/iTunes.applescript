@@ -1,5 +1,5 @@
 # homebridge-music/scripts/iTunes.applescript
-# Copyright © 2016-2020 Erik Baauw. All rights reserved.
+# Copyright ï¿½ 2016-2021 Erik Baauw. All rights reserved.
 #
 # Homebridge plugin for iTunes with Airplay speakers.
 #
@@ -19,7 +19,7 @@ on getState(i)
 		end tell
 	else
 		get "{\"on\":false,\"volume\":0,\"track\":\"\",\"speakers\":{\"Computer\":{\"on\":false,\"volume\":0}}}"
-		
+
 	end if
 end getState
 
