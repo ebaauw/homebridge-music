@@ -15,7 +15,7 @@
       },
       "track": {
         "title": "Default Track",
-	      "description": "Name of the track to play, when no track has been selected.",
+        "description": "Name of the track to play, when no track has been selected.",
         "type": "string"
       },
       "resetTrack": {
@@ -25,7 +25,7 @@
       },
       "script": {
         "title": "AppleScript Library",
-	      "description": "Name of the AppleScript library to interact with the player and speakers, see below.  Default: 'Music' or 'iTunes' (depending on macOS version).",
+        "description": "Name of the AppleScript library to interact with the player and speakers, see below.  Default: 'Music' or 'iTunes' (depending on macOS version).",
         "type": "string"
       },
       "speakername": {
@@ -41,19 +41,27 @@
         "oneOf": [
           {
             "title": "Switch",
-            "enum": [ "switch" ]
+            "enum": [
+              "switch"
+            ]
           },
           {
             "title": "Lightbulb",
-            "enum": [ "light" ]
+            "enum": [
+              "light"
+            ]
           },
           {
             "title": "Speaker",
-            "enum": [ "speaker" ]
+            "enum": [
+              "speaker"
+            ]
           },
           {
             "title": "Fan",
-            "enum": [ "fan" ]
+            "enum": [
+              "fan"
+            ]
           }
         ]
       },
@@ -96,9 +104,11 @@
       "description": "Select how to expose Player and Speakers to HomeKit.",
       "items": [
         "service",
-	      {
+        {
           "key": "brightness",
-          "condition": { "functionBody": "return model.service === 'switch' || model.service === 'speaker'" }
+          "condition": {
+            "functionBody": "return model.service === 'switch' || model.service === 'speaker'"
+          }
         }
       ]
     },
