@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "applescript": "^1.0.0",
-    "homebridge-lib": "~5.7.1",
+    "homebridge-lib": "~5.7.2",
     "is-my-json-valid": "^2.20.6"
   },
   "scripts": {
