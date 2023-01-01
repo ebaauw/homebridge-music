@@ -1,5 +1,5 @@
 {
-  "description": "SetOn.schema. Copyright © 2016-2022 Erik Baauw. All rights reserved.",
+  "description": "SetOn.schema. Copyright © 2016-2023 Erik Baauw. All rights reserved.",
   "type": "object",
   "properties": {
     "on": {
