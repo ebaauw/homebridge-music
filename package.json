@@ -2,7 +2,7 @@
   "name": "homebridge-music",
   "description": "Homebridge plugin for iTunes with Airplay speakers",
   "displayName": "Homebridge Music",
-  "version": "0.4.28",
+  "version": "0.4.29",
   "author": "Erik Baauw",
   "license": "Apache-2.0",
   "keywords": [
