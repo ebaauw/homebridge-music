@@ -1,5 +1,5 @@
 # homebridge-music/scripts/Music-Airfoil.applescript
-# Copyright © 2016-2024 Erik Baauw. All rights reserved.
+# Copyright © 2016-2025 Erik Baauw. All rights reserved.
 #
 # Homebridge plugin for Music with Airplay speakers.
 #
