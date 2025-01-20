@@ -5,10 +5,10 @@
 
 'use strict'
 
-const MusicPlatformModule = require('./lib/MusicPlatform')
-const MusicPlatform = MusicPlatformModule.MusicPlatform
+import { MusicPlatform } from './lib/MusicPlatform.js'
 
-module.exports = (homebridge) => {
-  MusicPlatformModule.setHomebridge(homebridge)
+function main (homebridge) {
   homebridge.registerPlatform('homebridge-music', 'Music', MusicPlatform)
 }
+
+export { main as default }
