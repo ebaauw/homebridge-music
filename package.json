@@ -11,17 +11,18 @@
   "keywords": [
     "homebridge-plugin"
   ],
+  "type": "module",
   "main": "index.js",
   "engines": {
-    "homebridge": "^1.8.3",
-    "node": "20.15.0||^20||^18"
+    "homebridge": "^1.8.5||^2.0.0-beta",
+    "node": "22.13.0||^22||^20||^18"
   },
   "os": [
     "darwin"
   ],
   "dependencies": {
     "applescript": "^1.0.0",
-    "homebridge-lib": "~6.7.4",
+    "homebridge-lib": "~7.1.2",
     "is-my-json-valid": "^2.20.6"
   },
   "scripts": {
