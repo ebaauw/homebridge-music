@@ -14,15 +14,15 @@
   "type": "module",
   "main": "index.js",
   "engines": {
-    "homebridge": "^1.9.0||^2.0.0-beta",
-    "node": "22.14.0||^22||^20||^18"
+    "homebridge": "^1.11.0||^2.0.0-beta",
+    "node": "22.20.0||^22||^20"
   },
   "os": [
     "darwin"
   ],
   "dependencies": {
     "applescript": "^1.0.0",
-    "homebridge-lib": "~7.1.4",
+    "homebridge-lib": "~7.1.9",
     "is-my-json-valid": "^2.20.6"
   },
   "scripts": {
