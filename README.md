@@ -16,7 +16,7 @@
 </span>
 
 ## Homebridge plugin for iTunes with Airplay speakers
-Copyright © 2016-2025 Erik Baauw. All rights reserved.
+Copyright © 2016-2026 Erik Baauw. All rights reserved.
 
 This [homebridge](https://github.com/homebridge/homebridge) plugin exposes controls to Apple's [HomeKit](http://www.apple.com/ios/home/) for a music player, like iTunes/Music or EyeTV, running on macOS.  It provides the following features:
 - HomeKit support for controlling iTunes (Music as of macOS 10.15 Catalina) or [EyeTV](https://www.geniatech.eu/):
