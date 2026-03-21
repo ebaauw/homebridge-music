@@ -1,7 +1,7 @@
 # homebridge-music/scripts/EyeTV-Airfoil.applescript
 # Copyright © 2016-2026 Erik Baauw. All rights reserved.
 #
-# Homebridge plugin for iTunes with Airplay speakers.
+# Homebridge plugin for Apple Music with Airplay speakers.
 #
 # Player: EyeTV, see: https://www.geniatech.eu/
 # Speakers: Airfoil, see: https://www.rogueamoeba.com/airfoil

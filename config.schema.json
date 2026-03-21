@@ -2,7 +2,7 @@
   "pluginAlias": "Music",
   "pluginType": "platform",
   "singular": true,
-  "headerDisplay": "Homebridge plugin for iTunes with Airplay speakers",
+  "headerDisplay": "Homebridge plugin for Apple Music with Airplay speakers",
   "footerDisplay": "For details on the AppleScript library, look [here](https://github.com/ebaauw/homebridge-music#applescript).",
   "schema": {
     "type": "object",
