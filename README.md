@@ -15,11 +15,11 @@
 
 </span>
 
-## Homebridge plugin for iTunes with Airplay speakers
+## Homebridge plugin for Apple Music with Airplay speakers
 Copyright © 2016-2026 Erik Baauw. All rights reserved.
 
-This [homebridge](https://github.com/homebridge/homebridge) plugin exposes controls to Apple's [HomeKit](http://www.apple.com/ios/home/) for a music player, like iTunes/Music or EyeTV, running on macOS.  It provides the following features:
-- HomeKit support for controlling iTunes (Music as of macOS 10.15 Catalina) or [EyeTV](https://www.geniatech.eu/):
+This [homebridge](https://github.com/homebridge/homebridge) plugin exposes controls to Apple's [HomeKit](http://www.apple.com/ios/home/) for a music player, like Apple Music (previously iTunes) or EyeTV, running on macOS.  It provides the following features:
+- HomeKit support for controlling Apple Music (iTunes before macOS 10.15 Catalina) or [EyeTV](https://www.geniatech.eu/):
   - On/Off control;
   - Volume control;
   - Previous/Next track/channel;
@@ -36,7 +36,7 @@ Note: this is my old plugin from 2016 that I used to control my music, before mo
 
 ### Prerequisites
 You need a macOS system to run Homebridge Music.
-AppleScript is used to communicate with iTunes/Music, EyeTV, or another music player, and that only runs on macOS.
+AppleScript is used to communicate with Music, iTunes, EyeTV, or another music player, and that only runs on macOS.
 
 To interact with HomeKit, you need Siri or a HomeKit app on an iPhone, Apple Watch, iPad, iPod Touch, or Apple TV (4th generation or later).
 I recommend to use the latest released versions of iOS, watchOS, and tvOS.  
@@ -48,12 +48,12 @@ For remote access and for HomeKit automations, you need to setup an Apple TV (4t
 
 ### Player and Speakers
 Homebridge Music creates an accessory *Music* for the player.
-By default, this accessory contains a single `ÂSwitch` service, with the same name as the accessory.
-In addition to the standard `On` characteristic for play/pause control, additional characteristics are provided for `Volume`, `Change Track`, and `Current Track` (read-only).
+By default, this accessory contains a single `Switch` service, with the same name as the accessory.
+In addition to the standard `On` characteristic for play/pause control, additional characteristics are provided for `Volume`, `Change Volume`, `Change Track`, `Current Track` (read-only), and `Log Level`.
 
 For each AirPlay or Airfoil speaker, Homebridge Music creates an additional accessory, named after the speaker.
-By default, these accessory contain a single `Switch` service, with the same name as the accessory.
-In addition to the standard `One` characteristic for play/pause control, an additional characteristic is provided for `Volume`.
+By default, these accessories contain a single `Switch` service, with the same name as the accessory.
+In addition to the standard `On` characteristic for play/pause control, an additional characteristic is provided for `Volume`.
 
 Note that neither Siri nor the Apple's Home app support `Volume`, even thought this is a standard HomeKit characteristic.
 Because of this, the type of the service, as well as the type of characteristic used for volume can be changed from `config.json`, see [**Configuration**](#configuration) and [Homebridge ZP issue #10](https://github.com/ebaauw/homebridge-zp/issues/10).
@@ -82,7 +82,7 @@ Key | Default | Description
 --- | ------- | -----------
 `service` | `"switch"` | Defines what type of service and volume characteristic Homebridge Music uses.<br>Possible values are: `"switch"` for `Switch` and `Volume`; `"speaker"` for `Speaker` and `Volume`; `"light"` for `LightBulb` and `Brightness`; and `"fan"` for `Fan` and `Rotation Speed`.<br>Selecting `"light"` or `"fan"` enables changing the volume from Siri and from Apple's Home app.<br>Selecting `"speaker"` is not supported by the Apple's Home app.
 `brightness` | `false` | Flag whether to expose volume as `Brightness` in combination with `Switch` or `Speaker`.<br>Setting this flag enables volume control from Siri.
-`script` | `"iTunes"`<br>`"Music"`| Name of the AppleScript library to interact with the player and speakers.<br>The default depends on the macOS version, see [**AppleScript**](#applescript).
+`script` | `"Music"`<br>`"iTunes"`| Name of the AppleScript library to interact with the player and speakers.<br>The default depends on the macOS version, see [**AppleScript**](#applescript).
 `speakername` | `".*"` _(any)_ | Regular expression to be used as filter for speaker names.
 `track` | `""` _(none)_ | Name of the track for the player to start.<br>Note that iTunes and Music will report an error when trying to Play when no current track has been set.  You might want to change the default when starting iTunes or Music from Homebridge Music.
 `resetTrack` | `false` | Reset current track to default track on stop.
@@ -97,10 +97,10 @@ Homebridge Music ships with the following scripts:
 
 Script           | Player | Speakers | macOS
 ---------------- | -------| -------- | -----------
-`iTunes`         | iTunes | iTunes AirPlay speakers | < 10.15 Catalina
 `Music`          | Music  | Music AirPlay speakers | >= 10.15 Catalina
-`iTunes-Airfoil` | iTunes | [Airfoil](https://www.rogueamoeba.com/airfoil) | < 10.15 Catalina
 `Music-Airfoil`  | Music  | [Airfoil](https://www.rogueamoeba.com/airfoil) | >= 10.15 Catalina
+`iTunes`         | iTunes | iTunes AirPlay speakers | < 10.15 Catalina
+`iTunes-Airfoil` | iTunes | [Airfoil](https://www.rogueamoeba.com/airfoil) | < 10.15 Catalina
 `EyeTV-Airfoil`  | [EyeTV v3](https://www.geniatech.eu/product/eyetv-3/)* | [Airfoil](https://www.rogueamoeba.com/airfoil) | < 10.15 Catalina
 _n/a_            | [EyeTV v4](https://www.geniatech.eu/product/eyetv-4/)* | [Airfoil](https://www.rogueamoeba.com/airfoil) | n/a
 
