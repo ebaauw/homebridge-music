@@ -2,7 +2,7 @@
   "name": "homebridge-music",
   "description": "Homebridge plugin for Apple Music with Airplay speakers",
   "displayName": "Homebridge Music",
-  "version": "0.4.47",
+  "version": "1.0.0-0",
   "maintainers": [
     "ebaauw"
   ],
