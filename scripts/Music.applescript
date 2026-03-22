@@ -1,5 +1,5 @@
 # homebridge-music/scripts/Music.applescript
-# Copyright © 2016-2026 Erik Baauw. All rights reserved.
+# Copyright Â© 2016-2026 Erik Baauw. All rights reserved.
 #
 # Homebridge plugin for Apple Music with Airplay speakers.
 #
@@ -55,8 +55,8 @@ on changeTrack(n)
 			else
 				previous track
 			end if
+			delay 1
 		end if
-		delay 1
 		if player state is playing then
 			set t to name of current track
 		else

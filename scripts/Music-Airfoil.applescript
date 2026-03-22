@@ -29,11 +29,16 @@ on setPlayerOn(o, t)
 	tell application "Music"
 		if o then
 			tell me to setAudioSource("Music")
-			play track t
+			if t is "" then
+				play
+			else
+				play track t
+			end if
 			set mute to false
 		else
 			stop
 		end if
+		delay 1
 		if player state is playing then
 			set t to name of current track
 		else
@@ -52,6 +57,7 @@ on changeTrack(n)
 			else
 				previous track
 			end if
+			delay 1
 		end if
 		if player state is playing then
 			set t to name of current track
