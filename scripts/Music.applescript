@@ -27,6 +27,8 @@ on setPlayerOn(o, t)
 		if o then
 			if t starts with "itmss://" then
 				open location t
+			else if t is "" then
+				play
 			else
 				play track t
 			end if
@@ -34,6 +36,7 @@ on setPlayerOn(o, t)
 		else
 			stop
 		end if
+		delay 1
 		if player state is playing then
 			set t to name of current track
 		else
@@ -53,6 +56,7 @@ on changeTrack(n)
 				previous track
 			end if
 		end if
+		delay 1
 		if player state is playing then
 			set t to name of current track
 		else
