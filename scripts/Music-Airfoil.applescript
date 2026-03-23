@@ -111,7 +111,7 @@ end getSpeakerStates
 on setAudioSource(a)
 	set p to (POSIX path of (path to application a))
 	tell application "Airfoil"
-		if name of current audio source is not a then
+		if get name of current audio source is not a then
 			set s to make new application source
 			set application file of s to p
 			set current audio source to s
